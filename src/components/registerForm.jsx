@@ -13,20 +13,20 @@ class RegisterForm extends Form {
       .required()
       .email()
       .label("Username"),
+
     password: Joi.string()
       .required()
       .min(5)
-      .label("Password"),
+      .label("Username"),
+
     name: Joi.string()
       .required()
       .label("Name")
   };
-
   doSubmit = () => {
-    // Call the server
+    //call the server
     console.log("Submitted");
   };
-
   render() {
     return (
       <div>
