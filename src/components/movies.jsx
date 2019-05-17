@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getMovies, deleteMovies } from "../services/movieService";
+import { getMovies, deleteMovie } from "../services/movieService";
 import { getGenres } from "../services/genreService";
 import { paginate } from "../utils/paginate";
 import { Link } from "react-router-dom";
@@ -35,7 +35,7 @@ class Movies extends Component {
     this.setState({ movies });
 
     try {
-      await deleteMovies(movie._id);
+      await deleteMovie(movie._id);
     } catch (ex) {
       if (ex.response && ex.response.status === "404")
         toast.error("This movie has already been deleted");
